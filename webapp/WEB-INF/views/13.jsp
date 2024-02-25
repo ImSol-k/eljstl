@@ -74,17 +74,21 @@
 				<th>이메일</th>
 				<th>패스워드</th>
 				<th>성별</th>
+				<th>index</th>
+				<th>count</th>
 			</tr>
 		</thead>
 		<tbody>
 		
-		<c:forEach items="${requestScope.userList }" var="userVo">
+		<c:forEach items="${requestScope.userList }" var="userVo" step="4" varStatus="status">
 			<tr>
 				<td>${userVo.no }</td>
 				<td>${userVo.name }</td>
 				<td>${userVo.email }</td>
 				<td>${userVo.password }</td>
 				<td>${userVo.gender }</td>
+				<td>${status.index }</td>
+				<td>${status.count }</td>
 			</tr>
 		</c:forEach>
 		</tbody>
